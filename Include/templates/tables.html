@@ -1,0 +1,83 @@
+{% extends 'base.html'%}
+
+{% block url_style %}{{url_for('static', filename='style/tables.css')}}{% endblock %}
+
+{% block content %}
+
+	{% if table_name == "currency_table" %}
+	<div id="table_now">
+		<table class="table_blur">
+			<tr>
+				<th>Team/Stat</th>
+				<th>xG</th>
+				<th>Games</th>
+				<th>Deff Goal</th>
+				<th>Score</th>
+			</tr>
+			 
+			{% for team in data %}
+			<tr>
+				<td>{{ team.team }}</td>
+				<td>{{ team.games }}</td>
+				<td>{{ team.xG }}</td>
+				<td>{{ team.deff_goals }}</td>
+				<td>{{ team.score }}</td>
+			</tr>
+			{% endfor %}		  
+		</table><br>
+		<div class="desc"> - зона лиги чемпионов<br> - зона лиги европы<br> - зона вылета</div>
+	</div>
+	{% endif %}
+
+
+	{% if table_name == "kf_uefa" %}
+	<div id="koeff_uefa">
+		<table>
+			<tr>
+				<th>Страна</th>
+				<th>Сумма за 5 лет</th>
+				<th>17/18</th>
+				<th>18/19</th>
+				<th>19/20</th>
+			</tr>
+
+			{% for liga in data %}
+			<tr>
+				<td>{{ liga.country }}</td>
+				<td>{{ liga.total_score }}</td>
+				<td>{{ liga.seventeen_eighteen }}</td>
+				<td>{{ liga.eighteen_nineteen }}</td>
+				<td>{{ liga.nineteen_twenty }}</td>
+			</tr>
+			{% endfor %}		  
+		</table>
+	</div>
+	{% endif %}
+
+	{% if table_name == "five_year" %}
+	<div id="table_ten">
+		<table>
+			<tr>
+				<th>Team/Stat</th>
+				<th>Games</th>
+				<th>Deff Goal</th>
+				<th>Кол-во голов</th>
+				<th>xG</th>
+				<th>Очков за 5 лет</th>
+			</tr>
+
+			{% for team in data %}
+			<tr>
+				<td>{{ team.team }}</td>
+				<td>{{ team.games }}</td>
+				<td>{{ team.deff_goals }}</td>
+				<td>{{ team.total_goals }}</td>
+				<td>{{ team.xG }}</td>
+				<td>{{ team.total_score }}</td>
+			</tr>
+			{% endfor %}		  
+		</table>
+	</div>
+	{% endif %}
+
+{% endblock %}

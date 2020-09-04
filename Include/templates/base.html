@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>RPL Score</title>
+    
+	<meta charset="utf-8">
+	<meta name="description" content="Сайт о футбольной российской примьер лиге. Таблицы, статьи на актуальные темы.">
+	<meta name="keywords" content="Футбол, РФПЛ, Тинькофф-российская премьер лига, таблица РФПЛ"/>
+
+	<link rel="shortcut icon" href="{{ url_for('static', filename='assert/icon.png') }}" />
+	<link rel="stylesheet" href="{{ url_for('static', filename='style/base.css') }}">
+	<link rel="stylesheet" href="{% block url_style %}
+			{% endblock %}">
+	
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js" defer></script>		
+	<script src="{{ url_for('static', filename='scripts/scripts.js') }}" defer></script>
+	<script src="https://kit.fontawesome.com/cb6129d936.js" crossorigin="anonymous"></script>
+	
+</head>
+<body>
+   <div class="header">
+			<div class="header-logo"><img src="{{url_for('static', filename='assert/logo.png')}}" alt="logo"></div>
+			<div class="header-space"></div>
+			<div class="header-button">
+				<div style="font-size: 24px;">
+				  <i class="fas fa-camera fa-sm"></i>
+				  <i class="far fa-address-card"></i>
+				  <i class="fas fa-adjust"></i>
+				</div>
+			</div>
+		</div>
+		
+		<div class="menu-top">
+			<div class="menu_items">
+				<div>
+					<a href="{{ url_for('lenta_page') }}" {%if articles%} class="tmp_page" {%endif%}>
+						Главная
+					</a>
+				</div>
+				<div>
+					<a href="{{ url_for('table_page', tb_name='currency_table') }}" {%if table_name == "currency_table"%} class="tmp_page"  {%endif%}>
+						Текущая таблица
+					</a>
+				</div>
+				<div>
+					<a href="{{ url_for('table_page', tb_name='five_year') }}" {%if table_name == "five_year_table"%} class="tmp_page"  {%endif%}>	
+						Таблица за 5 лет
+					</a>
+				</div>
+				<div>
+					<a href="{{ url_for('table_page', tb_name='kf_uefa') }}" {%if table_name == "kf_uefa" %} class="tmp_page"  {%endif%}>	
+						Коэффиценты УЕФА
+					</a>
+				</div>
+			</div>		
+		</div>
+
+	
+		{% block content %}
+					
+		{% endblock %}
+
+	
+</body>
+</html>

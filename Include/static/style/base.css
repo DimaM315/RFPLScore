@@ -1,0 +1,101 @@
+*{
+	margin:0;
+	padding:0;
+}
+
+/* Set core defaults */
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  background-image:url('{{url_for('static', filename='assert/bg-logo.png')}}');
+}
+
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+a {
+  color: #000 !important;
+  text-decoration: none
+}
+
+
+/* header */
+.header{
+  background: #7D956C;
+  display:flex;
+  height:70px;
+}
+.header-logo{
+  width:20%;
+}
+.header-logo img{
+  width:70px;
+  height:70px;
+}
+
+.header-space{
+  width:70%;
+}
+
+.header-button{
+  width:100px;
+  float: left;
+  display: flex;
+}
+.header-button i:hover{
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
+
+
+/* menu bar */
+.menu-top{
+  background:#F5DE78;
+  padding:10px 0% 10px 17%;
+  display: flow-root;
+  font-weight: bold;
+  border-radius: 0px 0px 45px 45px;
+  margin:0px 5%;
+}
+
+.tmp_page{
+  background-color: #B6C4DF;
+}
+
+.menu_items{
+  display: block;
+}
+.menu_items div{
+  display: inline-block;
+}
+
+a {
+  text-decoration: none; /*убираем подчеркивание текста ссылок*/
+  background:#F5DE78; /*добавляем фон к пункту меню*/
+  color:#fff; /*меняем цвет ссылок*/
+  padding:0px 15px; /*добавляем отступ*/
+  font-family: arial; /*меняем шрифт*/
+  line-height:50px; /*ровняем меню по вертикали*/
+  display: block; 
+  -moz-transition: all 0.1s 0.01s ease; /*делаем плавный переход*/
+  -o-transition: all 0.1s 0.01s ease;
+  -webkit-transition: all 0.1s 0.01s ease;
+
+}
+a:hover {
+  background:#F9EEC0;/*добавляем эффект при наведении*/
+}
+
+
+

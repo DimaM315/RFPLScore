@@ -1,0 +1,39 @@
+
+/* lenta */
+#lenta{
+	padding:40px 20%;
+	font-family: Helvetica;
+	background-color: rgba(255, 255, 255, 0.85);
+}
+
+.article_block{
+	margin:60px 10%;
+}
+
+.interaction_button{
+	width: 100%;
+	display:inline-block;
+}
+.full_read{
+	display:contents;
+	float:left;
+
+}
+.full_read a{
+	color:#004fb0 !important;
+	background-color: #B6C4DF;
+	margin-bottom: 5px;
+	height: 45px;
+}
+.like{
+	float:right;
+	border:0px;
+  cursor: pointer;
+}
+.like button{
+	padding: 4px;
+}
+.like-active{
+	background-color:#FF3347;
+	border:1px solid green;
+}

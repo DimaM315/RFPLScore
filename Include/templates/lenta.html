@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block url_style %}{{ url_for('static', filename='style/lenta.css') }}{% endblock %}
+
+{% block content %}
+	<div id="lenta">
+	{% for art in articles %}
+		<div class="article_block">
+			<h2>{{ art.title }}</h2>
+			<div class="article_text">{{ art.text }}</div>
+			<div class="interaction_button">
+				<!--<div class="like"><button class="like-active">Like</button> 1 </div> -->
+			</div>
+		</div>
+	{% endfor %}
+	</div>	
+{% endblock %}
